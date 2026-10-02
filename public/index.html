@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Client</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="nav-left">
+          <span class="brand">Home</span>
+          <span class="brand muted">Workspaces</span>
+          <span class="brand muted">Explore</span>
+        </div>
+
+        <div class="search-wrap">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="text" placeholder="Search Postman" />
+        </div>
+
+        <div class="top-actions">
+          <button class="icon-button" aria-label="Settings">⚙</button>
+          <button class="ghost-button">Sign In</button>
+          <button class="primary-button">Create Account</button>
+        </div>
+      </header>
+
+      <div class="banner">
+        <span>
+          You are using the Lightweight API Client, sign in or create an account to work with collections,
+          environments and unlock all free features in Postman.
+        </span>
+        <button class="close-banner" aria-label="Close">×</button>
+      </div>
+
+      <div class="workspace">
+        <aside class="sidebar">
+          <div class="sidebar-header">History</div>
+          <div class="history-list">
+            <div class="history-group">
+              <div class="history-title">Today</div>
+              <div class="history-item active">GET localhost:3000</div>
+              <div class="history-item">GET localhost:3000</div>
+              <div class="history-item">GET localhost:3000</div>
+              <div class="history-item">GET localhost:3000</div>
+            </div>
+            <div class="history-group">
+              <div class="history-title">September 21</div>
+              <div class="history-item">GET localhost:3000</div>
+            </div>
+            <div class="history-group">
+              <div class="history-title">September 13</div>
+              <div class="history-item">GET localhost:3000</div>
+              <div class="history-item">GET localhost:3000</div>
+            </div>
+          </div>
+        </aside>
+
+        <main class="main-panel">
+          <div class="request-bar">
+            <div class="method-select-wrap">
+              <select id="methodSelect">
+                <option>GET</option>
+                <option>POST</option>
+                <option>PUT</option>
+                <option>PATCH</option>
+                <option>DELETE</option>
+              </select>
+            </div>
+            <input id="urlInput" type="text" value="http://localhost:3000/products" />
+            <button id="sendButton" class="send-button">Send</button>
+          </div>
+
+          <div class="tab-strip">
+            <button class="tab active">Params</button>
+            <button class="tab">Authorization</button>
+            <button class="tab">Headers</button>
+            <button class="tab">Body</button>
+            <button class="tab">Pre-request Script</button>
+            <button class="tab">Tests</button>
+            <button class="tab">Settings</button>
+          </div>
+
+          <div class="detail-panel">
+            <div class="params-grid">
+              <div class="grid-header">
+                <span>Key</span>
+                <span>Value</span>
+              </div>
+              <div class="grid-row">
+                <input type="text" placeholder="Key" />
+                <input type="text" placeholder="Value" />
+              </div>
+            </div>
+          </div>
+
+          <div class="response-panel">
+            <div class="response-header">
+              <div class="response-tabs">
+                <button class="response-tab active">Pretty</button>
+                <button class="response-tab">Raw</button>
+                <button class="response-tab">Preview</button>
+                <button class="response-tab">Visualize</button>
+                <button class="response-tab">HTML</button>
+              </div>
+              <div class="response-meta">
+                <span>Status: <strong id="statusValue">404 Not Found</strong></span>
+                <span>Time: <strong id="timeValue">2 ms</strong></span>
+                <span>Size: <strong id="sizeValue">411 B</strong></span>
+              </div>
+            </div>
+            <pre id="responseOutput" class="response-output"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;Example&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;pre&gt;Cannot GET /&lt;/pre&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
